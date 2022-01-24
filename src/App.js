@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Checkbox from './Checkbox';
+import CheckboxGroup from './CheckboxGroup';
+import Radio from './Radio';
+import RadioGroup from './RadioGroup';
 
 function App() {
+  const handleSelected = (value) => {
+    console.log(value)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <RadioGroup onChange={handleSelected}>
+          <Radio value="hello"> hello </Radio>
+          <Radio value="word"> word </Radio>
+        </RadioGroup>
+      </div>
+      <div>
+        <CheckboxGroup onChange={handleSelected}>
+          <Checkbox value="box1" >box1</Checkbox>
+          <Checkbox value="box2" >box2</Checkbox>
+        </CheckboxGroup>
+
+      </div>
     </div>
   );
 }
